@@ -6,6 +6,7 @@ const userRoutes = require('./routes/users');
 const profileRoutes = require('./routes/profile');
 const cors = require('cors');
 const { protect, admin } = require('./middlewares/auth');
+const cartRoutes = require('./routes/cartRoutes');
 const app = express();
 
 //conectar a la BD
@@ -22,6 +23,9 @@ app.use('/api/users', userRoutes);
 app.use('/api/products', protect, productRoutes);
 app.use('/api/admin/products', protect, admin, productRoutes);
 app.use('/api/profile', protect, profileRoutes);
+
+app.use('/api/cart', cartRoutes);
+
 
 //Iniciar el servidors
 
