@@ -16,7 +16,7 @@ Esta es una API para una tienda online construida con Node.js y MongoDB. Permite
 - MongoDB
 - Mongoose
 - JWT (JSON Web Tokens)
-- bcryptjs (para el hash de contraseñas)
+- bcrypt (para el hash de contraseñas)
 
 ## Endpoints
 
@@ -68,26 +68,28 @@ Esta es una API para una tienda online construida con Node.js y MongoDB. Permite
 - **Descripción:** Obtiene un producto específico por su ID.
 - **Autenticación requerida:** No.
 
-#### Crear un nuevo producto
-- **Método:** `POST`
-- **Ruta:** `/api/products`
+### Crear un producto
+- **Método:** POST
+- **Ruta:** /api/products
 - **Descripción:** Crea un nuevo producto en la tienda (solo admin).
 - **Datos requeridos:**
-  - `name`: Nombre del producto.
-  - `description`: Descripción del producto.
-  - `price`: Precio del producto.
-  - `imageUrl`: URL de la imagen del producto.
+    - `name`: Nombre del producto.
+    - `description`: Descripción del producto.
+    - `price`: Precio del producto.
+    - `category`: Categoría del producto.
+    - `stock`: Stock del producto.
 - **Autenticación requerida:** Sí (Token JWT de administrador).
 
-#### Actualizar un producto
-- **Método:** `PUT`
-- **Ruta:** `/api/products/:id`
+### Actualizar un producto
+- **Método:** PUT
+- **Ruta:** /api/products/:id
 - **Descripción:** Actualiza un producto por su ID (solo admin).
 - **Datos requeridos:**
-  - `name`: Nuevo nombre del producto.
-  - `description`: Nueva descripción del producto.
-  - `price`: Nuevo precio del producto.
-  - `imageUrl`: Nueva URL de la imagen del producto.
+    - `name`: Nuevo nombre del producto.
+    - `description`: Nueva descripción del producto.
+    - `price`: Nuevo precio del producto.
+    - `category`: Nueva categoría del producto.
+    - `stock`: Nuevo stock del producto.
 - **Autenticación requerida:** Sí (Token JWT de administrador).
 
 #### Eliminar un producto
