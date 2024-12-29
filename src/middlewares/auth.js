@@ -36,7 +36,7 @@ const protect = async (req, res, next) => {
 //middleware para verificar si el usuario es admin 
 
 const admin = (req, res, next) => {
-    if (req.user && res.user.role === 'admin') {
+    if (req.user && req.user.role === 'admin') {
         next();
     } else {
         res.status(403).json({ message: 'No autorizado, se neecsita privilegios de administrador ' });
